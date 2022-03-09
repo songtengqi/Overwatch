@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jump</title>
+    <style>
+        p{
+            text-align: center;
+        }
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<p>
+    <span id="time">5</span>seconds, will go to Overwatch society
+</p>
+</body>
+<script>
+    var number = 5;
+    var time = document.getElementById("time");
+    function changeTime() {
+        number--;
+        if (number<=1){
+            location.href="https://us.forums.blizzard.com/en/overwatch/"
+        }
+        time.innerHTML = number+"";
+
+    }
+    setInterval(changeTime,1000);
+</script>
+</html>

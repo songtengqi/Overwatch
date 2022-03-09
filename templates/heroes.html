@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}{{ super() }} - Heroes{% endblock %}
+{% block body %}
+    <br>
+{#    做一个英雄分类的bootstrap table#}
+    <img id="img" src="../static/imgs/banner_1.png"  width="1520" height="677">
+    <div class="container">
+        <h1 style="color: aquamarine">Quick view of Heroes</h1>
+        <table class="table table-dark table-striped table-hover table-responsive-md">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Position In the Team</th>
+                    <th>Duty In the Team</th>
+                    <th>Connection with Team</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">TANKS</th>
+                    <td>Front line of the team</td>
+                    <td>Leading the whole team to fight(control enemies and protect teammates</td>
+                    <td>Good tanks always can make opportunity for team</td>
+                </tr>
+                <tr>
+                    <th scope="row">DAMAGE</th>
+                    <td>Following the tanks</td>
+                    <td>When tanks destroy enemy's formation, damage need to make damage as lot as possible and make killes</td>
+                    <td>Good damage always can improve the effective of killing</td>
+                </tr>
+                <tr>
+                    <th scope="row">SUPPORT</th>
+                    <td>Backline of the team</td>
+                    <td>Support's job is to make sure that tanks and damage can survive when they do their job</td>
+                    <td>Good support can always make sure that tanks and damage can survive even though they are in a risk</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+
+
+    var number = 1;
+     function changeImg() {
+        number++;
+        if (number>2){
+            number = 1;
+        }
+        var img = document.getElementById("img");
+        img.src = "../static/imgs/banner_"+number+".png";
+
+    }
+
+    setInterval(changeImg,2000);
+</script>
+{% endblock %}
